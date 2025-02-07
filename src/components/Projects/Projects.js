@@ -1,13 +1,86 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
+import "./Projects.css";
 import Sportify from "../../Assets/Projects/Sportify.jpeg";
 import Doctor from "../../Assets/Projects/doctorwheel.jpg";
 import Lord from "../../Assets/Projects/LordSDL.jpeg";
 import Chatbot from "../../Assets/Projects/bot.jpeg";
 import Arduino from "../../Assets/Projects/arduino.jpeg";
-import troc from "../../Assets/Projects/troc.jpeg";
+import Troc from "../../Assets/Projects/troc.jpeg";
+import TerminalPortfolio from "../../Assets/Projects/TerminalPortfolio.jpeg";
+import FactoryMobileApp from "../../Assets/Projects/FactoryMobileApp.jpeg";
+import Karhabti from "../../Assets/Projects/Karhabti.jpeg";
+
+const projects = [
+  {
+    imgPath: Karhabti,
+    title: "Karhabti - Car Rental Web Application",
+    description:
+      "A web application for car rental developed using React JSX for the front end and React TSX for the admin dashboard.",
+    demoLink: "https://karhabti.vercel.app/",
+  },
+  {
+    imgPath: FactoryMobileApp,
+    title: "Factory Mobile App - Hackathon Project",
+    description:
+      "An innovative mobile app developed in a 24-hour hackathon, monitoring cement prices and integrating real-time GPS verification.",
+    ghLink: "https://github.com/marwaniiwael18/Application-Mobile-HACKATHON-",
+    ytLink: "https://www.youtube.com/watch?v=oYuL_l5qsUA",
+  },
+  {
+    imgPath: TerminalPortfolio,
+    title: "Terminal Portfolio",
+    description:
+      "An interactive portfolio terminal showcasing skills, projects, and background in an engaging terminal-style interface.",
+    ghLink: "https://github.com/marwaniiwael18/Terminal-Portfolio",
+    demoLink: "https://terminal-portfolio-lake.vercel.app/",
+  },
+  {
+    imgPath: Arduino,
+    title: "Arduino project",
+    description:
+      "A UI built using Squareline Studio, demonstrating graphical UI editing for various projects.",
+    ghLink: "https://github.com/marwaniiwael18/Squareline-Studio-UI-Project",
+  },
+  {
+    imgPath: Chatbot,
+    title: "Chatbot",
+    description:
+      "A chatbot system encapsulating best practices and innovative methodologies.",
+    ghLink: "https://github.com/marwaniiwael18/chetbot_masterclass-main",
+  },
+  {
+    imgPath: Sportify,
+    title: "Sportify",
+    description:
+      "Sportify is a web & desktop app built using Symfony 5.4 & JavaFX for sports ground reservations.",
+    ghLink: "https://github.com/marwaniiwael18/Sportify",
+  },
+  {
+    imgPath: Doctor,
+    title: "Doctor Wheel",
+    description:
+      "A desktop application in C++ with QT Creator, managing vehicle technical visits.",
+    ghLink: "https://github.com/marwaniiwael18/Doctor-Wheel",
+  },
+  {
+    imgPath: Troc,
+    title: "TUNI-TROC",
+    description:
+      "A web platform for selling, exchanging, or donating furniture, built using PHP, JavaScript, and an Oracle database.",
+    ghLink: "https://github.com/marwaniiwael18/Tuni-Troc",
+    ytLink: "https://www.youtube.com/watch?v=kSqzBMO20GU",
+  },
+  {
+    imgPath: Lord,
+    title: "Lord Of Amazigh",
+    description:
+      "A 2D game developed in C using the SDL library, showcasing video game development skills.",
+    ghLink: "https://github.com/marwaniiwael18/SDL-Project-Jeu.2D?tab=readme-ov-file",
+  },
+];
 
 function Projects() {
   return (
@@ -15,72 +88,21 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          Top <strong className="purple">Projects</strong>
         </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+        <div className="portfolio-container">
+          {projects.map((project, index) => (
             <ProjectCard
-              imgPath={Lord}
-              isBlog={false}
-              title="Lord Of Amazigh"
-              description="This project is a 2D game developed in C language using the SDL (Simple DirectMedia Layer) library. This project demonstrates my skills in C programming and video game development, with a focus on creating interactive, high-performance games."
-              ghLink="https://github.com/marwaniiwael18/SDL-Project-Jeu.2D?tab=readme-ov-file"
+              key={index}
+              imgPath={project.imgPath}
+              title={project.title}
+              description={project.description}
+              ghLink={project.ghLink}
+              demoLink={project.demoLink}
+              ytLink={project.ytLink}
             />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={troc}
-              isBlog={false}
-              title="TUNI-TROC"
-              description="This project is a web platform to allow users to sell, exchange or donate furniture online. The site is developed with Visual Studio using CSS, JavaScript and PHP7 languages ​​for the front-end and back-end, and an Oracle database to store user information."
-              ghLink="https://github.com/marwaniiwael18/Tuni-Troc"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Doctor}
-              isBlog={false}
-              title="Doctor Wheel"
-              description="This project is a desktop application developed in C++ language with QT Creator, which allows you to manage a technical visit center for vehicles."
-              ghLink="https://github.com/marwaniiwael18/Doctor-Wheel"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Sportify}
-              isBlog={false}
-              title="Sportify"
-              description="Sportify is a comprehensive desktop and web application built using Symfony 5.4 and JavaFX, both connected to the same SQL database for synchronized data management. Designed to streamline the process of reserving sports grounds, Sportify offers an array of features for both land owners and users. Owners can effortlessly add and manage their properties, making them available for reservations. Users enjoy a smooth, intuitive booking experience with advanced search, sorting, and rating capabilities to help them make informed decisions and find the best sports grounds that meet their needs."
-              ghLink="https://github.com/marwaniiwael18/Sportify"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Chatbot}
-              isBlog={false}
-              title="Chatbot"
-              description="Welcome to the chatbot_masterclass-main repository. This project encapsulates best practices, advanced techniques, and innovative methodologies for building state-of-the-art chatbot systems."
-              ghLink="https://github.com/marwaniiwael18/chetbot_masterclass-main"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={Arduino}
-              isBlog={false}
-              title="Arduino project"
-              description="A simple UI built using Squareline Studio, a fairly new WYSIWYG graphical UI editor for various project types. This project demonstrates building the UI and setting up actions without any prior programming knowledge. It also covers some of the pitfalls and problems encountered while working with Squareline Studio."
-              ghLink="https://github.com/marwaniiwael18/Squareline-Studio-UI-Project"
-            />
-          </Col>
-        </Row>
+          ))}
+        </div>
       </Container>
     </Container>
   );

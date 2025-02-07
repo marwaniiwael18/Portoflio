@@ -1,0 +1,79 @@
+/* Projects.css */
+.project-section {
+    padding: 60px 0;
+    background: #121212;
+}
+
+.project-heading {
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.purple {
+    color: #A020F0;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolio-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.portfolio-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(160, 32, 240, 0.4);
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    opacity: 1;
+}
+
+.icon-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.icon-row a {
+    color: #A020F0;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.icon-row a:hover {
+    color: #fff;
+}
